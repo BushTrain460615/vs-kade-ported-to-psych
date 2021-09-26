@@ -94,6 +94,9 @@ class PlayState extends MusicBeatState
 	public var dadMap:Map<String, Character> = new Map<String, Character>();
 	public var gfMap:Map<String, Character> = new Map<String, Character>();
 	#end
+	var uwuboplef:BGSprite;
+	var bopmid:BGSprite;
+	var bopright:BGSprite;
 
 	public var BF_X:Float = 770;
 	public var BF_Y:Float = 100;
@@ -459,6 +462,27 @@ class PlayState extends MusicBeatState
 				fastCar = new BGSprite('limo/fastCarLol', -300, 160);
 				fastCar.active = true;
 				limoKillingState = 0;
+			case 'sunset':
+				var sun:BGSprite = new BGSprite('sunset',-95, 27, 0.5,0.5);
+				sun.setGraphicSize(Std.int(sun.width * 1.8));
+				add(sun);
+				var prop:BGSprite = new BGSprite('props', -237, 727, 0.9,0.9);
+				var grass:BGSprite = new BGSprite('grass', 90, 57, 0.9,0.9);
+				uwuboplef = new BGSprite('crowdLeft', grass.x - 650 , DAD_Y + 40, 0.95, 0.95, ['Crowd_KadeLeft']);
+				bopmid = new BGSprite('crowdMid', uwuboplef.x + uwuboplef.width - 440 , DAD_Y - 150 , 0.95, 0.95, ['Crowd_KadeMid']);
+				bopright = new BGSprite('crowdRight', bopmid.x + bopmid.width  - 420 + 200 , DAD_Y - 110, 0.95, 0.95, ['Crowd_KadeRight']);
+				var road:BGSprite = new BGSprite('sidewalk', -170, 75, 0.9,0.9);
+				road.setGraphicSize(Std.int(road.width * 1.4));
+				grass.setGraphicSize(Std.int(grass.width * 1.8));
+				var trees:BGSprite = new BGSprite('daTrees',grass.x, 45,0.9,0.9);
+				trees.setGraphicSize(Std.int(grass.width * 1.8));
+				add(trees);
+				add(grass);
+				add(bopmid);
+				add(uwuboplef);
+				add(bopright);
+				//add(road);
+				add(prop);
 
 			case 'mall': //Week 5 - Cocoa, Eggnog
 				var bg:BGSprite = new BGSprite('christmas/bgWalls', -1000, -500, 0.2, 0.2);
@@ -3746,6 +3770,12 @@ class PlayState extends MusicBeatState
 				if(!ClientPrefs.lowQuality) {
 					bgGirls.dance();
 				}
+			case 'sunset':
+			   if(!ClientPrefs.lowQuality) {
+				    uwuboplef.animation.play('Crowd_KadeLeft');
+					bopmid.animation.play('Crowd_KadeMid');
+					bopright.animation.play('Crowd_KadeRight');
+			   }
 
 			case 'mall':
 				if(!ClientPrefs.lowQuality) {

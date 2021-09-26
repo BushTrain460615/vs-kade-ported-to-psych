@@ -1,0 +1,66 @@
+{
+	"storyName": "bro are you kadedev?",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "week6",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"weekCharacters": [
+		"thefunny",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Cough",
+			"kadedev",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"JumpIn",
+			"kadedev",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Banger",
+			"kadedev",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Finale",
+			"kadedev",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"Happy",
+			"kadedev",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Week Kade"
+}
